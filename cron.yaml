@@ -1,0 +1,7 @@
+cron:
+  - description: daily start job
+    url: /start
+    schedule: every mon,tue,wed,thu,fri 07:00
+  - description: daily stop job
+    url: /stop
+    schedule: every mon,tue,wed,thu,fri 18:00
