@@ -6,3 +6,7 @@ const handler = require('./handler');
 
 app.get('/start/:instances', (req, res) => handler(req, res, 'start'));
 app.get('/stop/:instances', (req, res) => handler(req, res, 'stop'));
+
+app.listen(8080, () => {
+    console.log(`App listening`);
+});
