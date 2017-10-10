@@ -1,5 +1,7 @@
 # gcloud-instance-scheduler
 
+[![npm-version](https://img.shields.io/npm/v/gcloud-instance-scheduler.svg)](https://www.npmjs.com/package/gcloud-instance-scheduler)
+
 This is an App Engine in Node.js, that will start and stop your Compute Engine instances automatically.
 
 ## Usage
