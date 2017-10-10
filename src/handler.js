@@ -3,6 +3,13 @@ const cloud = require('google-cloud');
 const handler = (req, res, method) => {
     const gce = cloud.compute();
 
+    if(!req.header('X-Appengine-Cron')) {
+        return res.status(400).json({
+            type: 'Unauthorized',
+            message: 'Only cron jobs have access'
+        });
+    }
+
     const {instances} = req.params;
     if(!instances) {
         return res.status(400).json({
@@ -10,6 +17,7 @@ const handler = (req, res, method) => {
             message: 'Please define at least one instance'
         });
     }
+
     Promise.all(
         instances.split('|').map(
             name => gce
